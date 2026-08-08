@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Book Store</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        .book {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 5px 10px;
+        }
+
+        #cart {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mini Book Store</h1>
+
+    <div id="books"></div>
+
+    <div id="cart">
+        Cart: <span id="cartItems">Empty</span>
+    </div>
+
+    <script>
+        const books = [
+            "The Great Gatsby",
+            "1984",
+            "The Alchemist"
+        ];
+
+        const booksDiv = document.getElementById("books");
+        const cartItems = document.getElementById("cartItems");
+
+        // Display books dynamically
+        books.forEach((title, i) => {
+            let div = document.createElement("div");
+
+            div.className = "book";
+
+            div.innerHTML = `
+                <h3>${title}</h3>
+                <button onclick="addToCart('${title}')">
+                    Add to Cart
+                </button>
+            `;
+
+            booksDiv.appendChild(div);
+        });
+
+        // Add to cart
+        function addToCart(title) {
+            cartItems.textContent =
+                cartItems.textContent === "Empty"
+                    ? title
+                    : cartItems.textContent + ", " + title;
+        }
+    </script>
+
+</body>
+</html>
