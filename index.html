@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern CSS Combined Example</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 0;
+            padding: 30px;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: yellow;
+            border-bottom: 3px dashed yellow;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 70%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #222;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+    <!-- INLINE CSS -->
+    <h1 style="color: #ffcc00; border-bottom: 3px solid #ffcc00;">
+        Student Information Table
+    </h1>
+
+    <p class="highlight"></p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Year</th>
+        </tr>
+
+        <tr>
+            <td>Swapnali</td>
+            <td>E&TC</td>
+            <td>2nd Year</td>
+        </tr>
+
+        <tr class="special-row">
+            <td>Ashwini</td>
+            <td>IT</td>
+            <td>3rd Year</td>
+        </tr>
+
+        <tr>
+            <td>Priyanka</td>
+            <td>Computer</td>
+            <td>1st Year</td>
+        </tr>
+    </table>
+
+</body>
+</html>
