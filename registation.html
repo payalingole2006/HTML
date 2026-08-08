@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Validation Form</title>
+
+<script>
+function validateform() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (name == "") {
+        alert("Name field cannot be empty.");
+        return false;
+    }
+
+    if (email == "") {
+        alert("Email cannot be empty.");
+        return false;
+    }
+
+    if (!emailPattern.test(email)) {
+        alert("Enter a valid email.");
+        return false;
+    }
+
+    alert("Form submitted successfully");
+    return true;
+}
+</script>
+</head>
+
+<body style="background-color:pink;">
+
+<h1 style="color:brown; background-color:rgb(4, 4, 45);">
+Registration Form
+</h1>
+
+<form onsubmit="return validateform()">
+
+<label>Name:</label><br><br>
+<input type="text" id="name" placeholder="Enter a Name"><br><br>
+
+<label>Email:</label><br><br>
+<input type="email" id="email" placeholder="Enter an Email"><br><br>
+
+<label>Gender:</label><br><br>
+<input type="radio" name="gender" value="male">Male<br>
+<input type="radio" name="gender" value="female">Female<br>
+<input type="radio" name="gender" value="other">Other<br><br>
+
+<label>DOB:</label><br>
+<input type="date" name="dob"><br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
